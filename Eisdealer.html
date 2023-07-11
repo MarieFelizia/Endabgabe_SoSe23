@@ -1,13 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eisdealer </title>
+    <title>Eisdealer</title>
+    <link rel="stylesheet" href="Eisdeale.css">
+    <script src="Eiscafe.js"></script>
 </head>
-<p>funktioniert das hier?
-</p>
+
 <body>
-    
+
+    <div class="container">
+
+        <div class="left-content">
+            <p id="Ice">Eisdiele</p>
+            <canvas id="myCanvas" width="750" height="600"></canvas>
+        </div>
+
+        <div class="right-content">
+            <p id="Ice">Eis zusammenstellen:</p>
+
+            <div id="border">
+            
+                <label for="NameEisbecher"> Name des Eisbechers:</label>
+                <input type="text" id="Name" placeholder="Eisbecher">
+
+                <label for="EisSorte">Eissorte:</label>
+                <select id="Sorte">
+                <option value="Blaubeere">Blaubeere</option>
+                <option value="Zitrone">Zitrone</option>
+                <option value="Bubblegum">Bubblegum</option>
+                <option value="Erdbeere">Erdbeere</option>
+                </select>
+
+                <label for="EisKugel">Anzahl der Eiskugeln:</label>
+                <select id="Kugel"> 
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                </select>
+
+                <label for="Schokosße">Schokosoße</label>
+                <input type="checkbox" id="Schokosoße">
+
+                <label for="Erdbeersoße">Erdbeersoße</label>
+                <input type="checkbox" id="Erdbeersoße">
+
+                <label for="Streusel">Streusel</label>
+                <input type="checkbox" id="Streusel">
+
+                <label for="Sahne">Sahne</label>
+                <input type="checkbox" id="Sahne">
+
+                <label for="Preis"> Preis:</label>
+                <input type="text" id="Preis" placeholder="Preis">
+
+                <br>
+
+                <button id="button" type="submit">Eisbecher hinzufügen</button>
+            </div>
+
+        </div>
+
+    </div>
+
 </body>
+
 </html>
