@@ -21,31 +21,45 @@ namespace Ice {
 
     imageData = crc2.getImageData(0,0,800,600);
   
-    createKundis();
-    window.setInterval(moveCloud, 10);
+    createKundi();
+    window.setInterval(moveKundi, 10);
 
   };
 
-  function createKundis(): void {
+  function createKundi(): void {
     let startX = 600; // Start-X-Position des ersten Smileys
     let startY = 500; // Start-Y-Position aller Smileys
     let spacing = 300; // Abstand zwischen den Smileys
   
-    for (let i: number = 0; i < 5; i++) {
+    for (let i: number = 0; i < 1; i++) {
       let position: Ice.Vector = new Vector(startX + i * spacing, startY);
       let kunden: Kunden = new Kunden(0.5, position);
       kundenArray.push(kunden);
     }
   }
- function moveCloud(): void {
+  function moveKundi(): void {
     crc2.clearRect(0, 0, 1000, 600);
     crc2.putImageData(imageData, 0, 0);
-
-    for (let kunden of kundenArray) {
-        kunden.move(1 / 80);
-        kunden.draw();
+  
+    for (let kunde of kundenArray) {
+      if (!kunde.reachedSeat) {
+        kunde.move(1 / 500);
+      } else {
+        kunde.stopTimer += 1 / 60; // Zähle die Zeit in Sekunden (Annahme: 60 FPS)
+        if (kunde.stopTimer >= 20) { // Wenn 20 Sekunden vergangen sind
+          kunde.velocity = new Vector(30, 0); // Setze die Geschwindigkeit für die rechtsgerichtete Bewegung
+          kunde.reachedSeat = false; // Setze reachedSeat auf false, damit der Kunde weiterläuft
+          kunde.stopped = false;
+          kunde.stopTimer = 0;
+        } else {
+          kunde.stopped = true;
+        }
+      }
+      kunde.draw();
     }
-}
+  
+    requestAnimationFrame(moveKundi);
+  }
 
 
 function drawBackground() {
