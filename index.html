@@ -6,8 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eisdealer</title>
-    <link rel="stylesheet" href="Eisdeale.css">
-    <script src="Eiscafe.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="eiscafe.js"></script>
+    <script src="kunden.js"></script>
+    <script src="generateContent.js"></script>
+    <script src="vector.js"></script>
+    <script src="eissorten.js"></script>
 </head>
 
 <body>
@@ -16,31 +20,24 @@
 
         <div class="left-content">
             <p id="Ice">Eisdiele</p>
-            <canvas id="myCanvas" width="750" height="600"></canvas>
+            <canvas id="myCanvas" width="800" height="600"></canvas>
         </div>
 
         <div class="right-content">
             <p id="Ice">Eis zusammenstellen:</p>
 
             <div id="border">
-            
+
+            <div class="newOrder"> </div>
+
                 <label for="NameEisbecher"> Name des Eisbechers:</label>
                 <input type="text" id="Name" placeholder="Eisbecher">
 
-                <label for="EisSorte">Eissorte:</label>
-                <select id="Sorte">
-                <option value="Blaubeere">Blaubeere</option>
-                <option value="Zitrone">Zitrone</option>
-                <option value="Bubblegum">Bubblegum</option>
-                <option value="Erdbeere">Erdbeere</option>
-                </select>
+                <label for="EisSorte"> Sorte:</label>
+                <input type="text" id="Sorte" placeholder="Sorte">
 
-                <label for="EisKugel">Anzahl der Eiskugeln:</label>
-                <select id="Kugel"> 
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                </select>
+                <label for="EisKugel"> Wie viele Kugeln:</label>
+                <input type="text" id="Kugel" placeholder="Kugeln Anzahl">
 
                 <label for="Schokosße">Schokosoße</label>
                 <input type="checkbox" id="Schokosoße">
@@ -60,6 +57,9 @@
                 <br>
 
                 <button id="button" type="submit">Eisbecher hinzufügen</button>
+            </div>
+
+            <div id="OrderList"></div>
             </div>
 
         </div>

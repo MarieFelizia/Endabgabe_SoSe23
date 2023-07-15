@@ -1,0 +1,86 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 2;
+}
+
+.container {
+    display: flex;
+}
+
+.left-content {
+    flex: 1;
+}
+
+.right-content {
+    flex: 0.5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#Ice {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+}
+
+#Name,
+#Kugel,
+#Sorte,
+#Schokosoße,
+#Erdbeersoße,
+#Streusel,
+#Sahne,
+#Preis {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+    border-radius: 5px;
+    border-color: #c8c6c4;
+    border-style: solid;
+    width: 200px; /* Ändere die Breite nach Bedarf */
+    margin-bottom: 10px; /* Füge optionalen Abstand zwischen den Eingabefeldern hinzu */
+}
+
+#Preis {
+    color: black;
+}
+
+#button,
+#delete {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+    background-color: #c8c6c4;
+    border-radius: 5px;
+    border: none;
+    width: 200px; /* Ändere die Breite nach Bedarf */
+    margin-bottom: 10px; /* Füge optionalen Abstand zwischen den Buttons hinzu */
+}
+
+#button:hover {
+    background-color: #959492;
+}
+
+#border {
+    flex: 0.5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: #959492;
+    padding: 10px; /* Füge optionalen Innenabstand hinzu */
+    margin-bottom: 10px; /* Füge optionalen Abstand zwischen den Kästen hinzu */
+}
+
+.border {
+    flex: 0.5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: #959492;
+    padding: 10px; /* Füge optionalen Innenabstand hinzu */
+    margin-bottom: 10px; /* Füge optionalen Abstand zwischen den Kästen hinzu */
+}
