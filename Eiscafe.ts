@@ -68,6 +68,7 @@ function drawBackground() {
     drawCream({ x: 275, y: 275 });
     drawSprinkles({ x: 400, y: 275 });
     drawSeat({x:250, y:500}); 
+    drawTable({x:25, y:400});
     drawSorte1({x:550, y: 25}); 
     drawSorte2({x:550, y: 150}); 
     drawSorte3({x:550, y: 275}); 
@@ -277,5 +278,12 @@ function drawBackground() {
     crc2.closePath(); 
   }
 
+  function drawTable(_position: Vector) { 
+    crc2.beginPath();
+    crc2.fillStyle = "grey";
+    crc2.fillRect(_position.x, _position.y, 475, 40);
+    crc2.closePath();
+
+  }
 
 }

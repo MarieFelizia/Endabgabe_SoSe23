@@ -48,6 +48,7 @@ var Ice;
         drawCream({ x: 275, y: 275 });
         drawSprinkles({ x: 400, y: 275 });
         drawSeat({ x: 250, y: 500 });
+        drawTable({ x: 25, y: 400 });
         Ice.drawSorte1({ x: 550, y: 25 });
         Ice.drawSorte2({ x: 550, y: 150 });
         Ice.drawSorte3({ x: 550, y: 275 });
@@ -208,6 +209,12 @@ var Ice;
         Ice.crc2.arc(_position.x, _position.y, 50, 0, 2 * Math.PI);
         Ice.crc2.fillStyle = "grey";
         Ice.crc2.fill();
+        Ice.crc2.closePath();
+    }
+    function drawTable(_position) {
+        Ice.crc2.beginPath();
+        Ice.crc2.fillStyle = "grey";
+        Ice.crc2.fillRect(_position.x, _position.y, 475, 40);
         Ice.crc2.closePath();
     }
 })(Ice || (Ice = {}));
