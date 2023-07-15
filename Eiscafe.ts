@@ -99,6 +99,7 @@ function drawBackground() {
     drawSprinkles({ x: 400, y: 275 });
     drawSeat({x:250, y:500}); 
     drawTable({x:25, y:400});
+    
     drawSorte1({x:550, y: 25}); 
     drawSorte2({x:550, y: 150}); 
     drawSorte3({x:550, y: 275}); 
