@@ -1,6 +1,7 @@
 namespace Ice {
 
     export let chosenIceCream: string = ""
+    
 
     export class Kunden {
         position: Vector;

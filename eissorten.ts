@@ -1,5 +1,6 @@
 namespace Ice {
 
+    
     interface Vector {
         x: number;
         y: number;
