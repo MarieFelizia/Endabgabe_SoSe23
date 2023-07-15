@@ -11,6 +11,9 @@ var Ice;
         createKundi();
         window.setInterval(moveKundi, 10);
         choseIceCream();
+        window.addEventListener("keydown", handleKeyDown1);
+        window.addEventListener("keydown", handleKeyDown2);
+        window.addEventListener("keydown", handleKeyDown3);
     }
     ;
     function createKundi() {
@@ -240,6 +243,27 @@ var Ice;
         Ice.crc2.fillStyle = "grey";
         Ice.crc2.fillRect(_position.x, _position.y, 475, 40);
         Ice.crc2.closePath();
+    }
+    function handleKeyDown1(event) {
+        if (event.key === "1") {
+            1;
+            Ice.drawSorte1({ x: 400, y: 250 });
+            console.log("Sorte 1");
+        }
+    }
+    function handleKeyDown2(event) {
+        if (event.key === "2") {
+            1;
+            Ice.drawSorte2({ x: 400, y: 250 });
+            console.log("Sorte 2");
+        }
+    }
+    function handleKeyDown3(event) {
+        if (event.key === "3") {
+            1;
+            Ice.drawSorte3({ x: 400, y: 250 });
+            console.log("Sorte 3");
+        }
     }
 })(Ice || (Ice = {}));
 //# sourceMappingURL=Eiscafe.js.map

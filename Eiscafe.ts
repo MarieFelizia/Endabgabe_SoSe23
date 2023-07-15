@@ -25,6 +25,9 @@ namespace Ice {
     window.setInterval(moveKundi, 10);
     choseIceCream(); 
 
+    window.addEventListener("keydown", handleKeyDown1)
+    window.addEventListener("keydown", handleKeyDown2)
+    window.addEventListener("keydown", handleKeyDown3)
   };
 
   function createKundi(): void {
@@ -313,4 +316,28 @@ function drawBackground() {
 
   }
 
+  function handleKeyDown1(event: KeyboardEvent): void{
+    if(event.key === "1") { 1
+      drawSorte1 ({x: 400, y:250}); 
+      console.log("Sorte 1")
+    }
+
+  }
+
+  function handleKeyDown2(event: KeyboardEvent): void{
+    if(event.key === "2") { 1
+      drawSorte2 ({x: 400, y:250}); 
+      console.log("Sorte 2")
+    }
+
+  }
+
+  function handleKeyDown3(event: KeyboardEvent): void{
+    if(event.key === "3") { 1
+      drawSorte3 ({x: 400, y:250}); 
+      console.log("Sorte 3")
+    }
+
+  }
+  
 }
