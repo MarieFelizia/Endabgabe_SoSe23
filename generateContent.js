@@ -89,6 +89,13 @@ var Ice;
 
         <button id="delete" type="submit">Eisbecher löschen</button>
         `;
+        let deleteButton = newDiv.querySelector('#delete');
+        if (deleteButton) {
+            deleteButton.addEventListener('click', function (event) {
+                deletetaskdom(event);
+                deleteDataFromServer(item.id);
+            });
+        }
         let container = document.querySelector('#OrderList');
         container && container.appendChild(newDiv);
     }
@@ -99,6 +106,22 @@ var Ice;
         for (let docId in data) {
             let item = data[docId];
             generateContent(item);
+        }
+    }
+    function deletetaskdom(event) {
+        const target = event.target;
+        const divToDelete = target.closest('div');
+        divToDelete && divToDelete.remove();
+    }
+    async function deleteDataFromServer(id) {
+        let dataBaseIndex = "";
+        for (let docId in data) { //wir gehen durch jede docId(z.B.644cdd7d5caa0) in data durch 
+            let item = data[docId]; // wir holen uns das item für eine docId 
+            if (item.id == id) { // wir schauen ob das item mit docId die gesuchte item.id(man geht in ein item und vergleicht dort die "id") hat
+                dataBaseIndex = docId; // wenn wir die übereinstimmende id gefunden haben, speichern wir diese in dataBaseIndex
+            }
+            const deleteUrl = `https://webuser.hs-furtwangen.de/~ecklmari/Database/?command=delete&collection=TaskList&id=${dataBaseIndex}`;
+            await fetch(deleteUrl);
         }
     }
 })(Ice || (Ice = {}));
