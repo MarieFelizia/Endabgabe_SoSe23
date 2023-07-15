@@ -1,6 +1,7 @@
 "use strict";
 var Ice;
 (function (Ice) {
+    Ice.chosenIceCream = "";
     class Kunden {
         position;
         velocity;
@@ -34,7 +35,7 @@ var Ice;
                     if (this.position.y > Ice.crc2.canvas.height)
                         this.position.y -= Ice.crc2.canvas.height;
                 }
-                if (this.position.x >= 200 && this.position.x <= 450 && this.position.y >= 460 && this.position.y <= 540) {
+                if (this.position.x >= 250 && this.position.x <= 450 && this.position.y >= 460 && this.position.y <= 540) {
                     this.reachedSeat = true;
                     this.stopTimer = 0;
                 }
@@ -51,7 +52,7 @@ var Ice;
             }
         }
         draw() {
-            if (!this.reachedSeat) {
+            if (!this.reachedSeat || this.stopped) {
                 Ice.crc2.beginPath();
                 Ice.crc2.arc(this.position.x, this.position.y, 40, 0, 2 * Math.PI);
                 Ice.crc2.fillStyle = "yellow";
@@ -66,6 +67,12 @@ var Ice;
                 Ice.crc2.lineWidth = 5;
                 Ice.crc2.strokeStyle = "black";
                 Ice.crc2.stroke();
+                if (this.reachedSeat && Ice.chosenIceCream !== "") {
+                    Ice.crc2.fillStyle = "black";
+                    Ice.crc2.font = "10px Courier New";
+                    Ice.crc2.textAlign = "center";
+                    Ice.crc2.fillText(Ice.chosenIceCream, this.position.x, this.position.y + 60);
+                }
             }
         }
     }

@@ -1,4 +1,7 @@
 namespace Ice {
+
+    export let chosenIceCream: string = ""
+
     export class Kunden {
         position: Vector;
         velocity: Vector;
@@ -6,6 +9,7 @@ namespace Ice {
         reachedSeat: boolean;
         stopped: boolean;
         stopTimer: number;
+       
 
         constructor(_size: number, _position?: Vector) {
             if (_position)
@@ -18,6 +22,7 @@ namespace Ice {
             this.reachedSeat = false;
             this.stopped = false;
             this.stopTimer = 0;
+            
         }
 
         move(_timeslice: number): void {
@@ -37,7 +42,7 @@ namespace Ice {
                         this.position.y -= crc2.canvas.height;
                 }
 
-                if (this.position.x >= 200 && this.position.x <= 450 && this.position.y >= 460 && this.position.y <= 540) {
+                if (this.position.x >= 250 && this.position.x <= 450 && this.position.y >= 460 && this.position.y <= 540) {
                     this.reachedSeat = true;
                     this.stopTimer = 0;
                 }
@@ -53,7 +58,7 @@ namespace Ice {
         }
 
         draw(): void {
-            if (!this.reachedSeat) {
+            if (!this.reachedSeat || this.stopped) {
                 crc2.beginPath();
                 crc2.arc(this.position.x, this.position.y, 40, 0, 2 * Math.PI);
                 crc2.fillStyle = "yellow";
@@ -70,6 +75,13 @@ namespace Ice {
                 crc2.lineWidth = 5;
                 crc2.strokeStyle = "black";
                 crc2.stroke();
+
+                if (this.reachedSeat && chosenIceCream !== "") {
+                    crc2.fillStyle = "black";
+                    crc2.font = "10px Courier New";
+                    crc2.textAlign = "center";
+                    crc2.fillText(chosenIceCream, this.position.x, this.position.y + 60);
+                }
             }
         }
     }

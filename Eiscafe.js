@@ -10,10 +10,11 @@ var Ice;
         Ice.imageData = Ice.crc2.getImageData(0, 0, 800, 600);
         createKundi();
         window.setInterval(moveKundi, 10);
+        choseIceCream();
     }
     ;
     function createKundi() {
-        let startX = 600; // Start-X-Position des ersten Smileys
+        let startX = 0; // Start-X-Position des ersten Smileys
         let startY = 500; // Start-Y-Position aller Smileys
         let spacing = 300; // Abstand zwischen den Smileys
         for (let i = 0; i < 1; i++) {
@@ -30,20 +31,28 @@ var Ice;
                 kunde.move(1 / 500);
             }
             else {
-                kunde.stopTimer += 1 / 60; // Zähle die Zeit in Sekunden (Annahme: 60 FPS)
-                if (kunde.stopTimer >= 20) { // Wenn 20 Sekunden vergangen sind
-                    kunde.velocity = new Ice.Vector(30, 0); // Setze die Geschwindigkeit für die rechtsgerichtete Bewegung
-                    kunde.reachedSeat = false; // Setze reachedSeat auf false, damit der Kunde weiterläuft
-                    kunde.stopped = false;
-                    kunde.stopTimer = 0;
-                }
-                else {
+                if (!kunde.stopped) {
+                    kunde.velocity = new Ice.Vector(0, 0); // Setze die Geschwindigkeit auf Null, um den Smiley anzuhalten
                     kunde.stopped = true;
                 }
             }
             kunde.draw();
         }
         requestAnimationFrame(moveKundi);
+    }
+    function choseIceCream() {
+        const randomChoice = Math.floor(Math.random() * 3) + 1;
+        switch (randomChoice) {
+            case 1:
+                Ice.chosenIceCream = "Ich hätte gerne einen gemischten Eisbecher mit Sahne";
+                break;
+            case 2:
+                Ice.chosenIceCream = "Ich hätte gerne ein Kirscheis in der Waffel";
+                break;
+            case 3:
+                Ice.chosenIceCream = "Ich hätte gerne einen Bananasplit";
+                break;
+        }
     }
     function drawBackground() {
         let gradient = Ice.crc2.createLinearGradient(0, 0, 0, Ice.crc2.canvas.height);

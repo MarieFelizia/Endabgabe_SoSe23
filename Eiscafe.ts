@@ -23,11 +23,12 @@ namespace Ice {
   
     createKundi();
     window.setInterval(moveKundi, 10);
+    choseIceCream(); 
 
   };
 
   function createKundi(): void {
-    let startX = 600; // Start-X-Position des ersten Smileys
+    let startX = 0; // Start-X-Position des ersten Smileys
     let startY = 500; // Start-Y-Position aller Smileys
     let spacing = 300; // Abstand zwischen den Smileys
   
@@ -37,6 +38,7 @@ namespace Ice {
       kundenArray.push(kunden);
     }
   }
+
   function moveKundi(): void {
     crc2.clearRect(0, 0, 1000, 600);
     crc2.putImageData(imageData, 0, 0);
@@ -45,13 +47,8 @@ namespace Ice {
       if (!kunde.reachedSeat) {
         kunde.move(1 / 500);
       } else {
-        kunde.stopTimer += 1 / 60; // Zähle die Zeit in Sekunden (Annahme: 60 FPS)
-        if (kunde.stopTimer >= 20) { // Wenn 20 Sekunden vergangen sind
-          kunde.velocity = new Vector(30, 0); // Setze die Geschwindigkeit für die rechtsgerichtete Bewegung
-          kunde.reachedSeat = false; // Setze reachedSeat auf false, damit der Kunde weiterläuft
-          kunde.stopped = false;
-          kunde.stopTimer = 0;
-        } else {
+        if (!kunde.stopped) {
+          kunde.velocity = new Vector(0, 0); // Setze die Geschwindigkeit auf Null, um den Smiley anzuhalten
           kunde.stopped = true;
         }
       }
@@ -59,6 +56,22 @@ namespace Ice {
     }
   
     requestAnimationFrame(moveKundi);
+  }
+
+  function choseIceCream(): void {
+    const randomChoice = Math.floor(Math.random() * 3) + 1;
+
+    switch (randomChoice) {
+      case 1:
+        chosenIceCream = "Ich hätte gerne einen gemischten Eisbecher mit Sahne";
+        break;
+      case 2:
+        chosenIceCream = "Ich hätte gerne ein Kirscheis in der Waffel";
+        break;
+      case 3:
+        chosenIceCream = "Ich hätte gerne einen Bananasplit";
+        break;
+    }
   }
 
 
