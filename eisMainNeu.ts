@@ -42,6 +42,7 @@ namespace Ice {
       }
     }
   
+    //warum funktioniert das hier mit dem Liveserver aber nicht mit githuib??
     function moveKundi(): void {
         crc2.clearRect(0, 0, 1000, 600);
         crc2.putImageData(imageData, 0, 0);

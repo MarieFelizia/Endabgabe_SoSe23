@@ -26,6 +26,7 @@ var Ice;
             kundenArray.push(kunden);
         }
     }
+    //warum funktioniert das hier mit dem Liveserver aber nicht mit githuib??
     function moveKundi() {
         Ice.crc2.clearRect(0, 0, 1000, 600);
         Ice.crc2.putImageData(Ice.imageData, 0, 0);
