@@ -57,10 +57,14 @@ namespace Ice {
         }
         kunde.draw();
       }
+
+   
     
       requestAnimationFrame(moveKundi);
     }
   
+    
+
     function choseIceCream(): void {
       const randomChoice = Math.floor(Math.random() * 3) + 1;
   
@@ -316,6 +320,7 @@ namespace Ice {
       crc2.closePath();
   
     }
+
   
     function handleKeyDown1(event: KeyboardEvent): void{
       if(event.key === "1") { 1

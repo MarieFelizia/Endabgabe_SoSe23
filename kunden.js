@@ -62,11 +62,21 @@ var Ice;
                 Ice.crc2.arc(this.position.x + 15, this.position.y - 20, 8, 0, 2 * Math.PI);
                 Ice.crc2.fillStyle = "black";
                 Ice.crc2.fill();
-                Ice.crc2.beginPath();
-                Ice.crc2.arc(this.position.x, this.position.y + 10, 20, 0.2 * Math.PI, 0.8 * Math.PI);
-                Ice.crc2.lineWidth = 5;
-                Ice.crc2.strokeStyle = "black";
-                Ice.crc2.stroke();
+                if (!this.reachedSeat) {
+                    Ice.crc2.beginPath();
+                    Ice.crc2.moveTo(this.position.x - 20, this.position.y + 10); // Start point of the mouth
+                    Ice.crc2.lineTo(this.position.x + 20, this.position.y + 10); // End point of the mouth
+                    Ice.crc2.lineWidth = 5;
+                    Ice.crc2.strokeStyle = "black";
+                    Ice.crc2.stroke();
+                }
+                else {
+                    Ice.crc2.beginPath();
+                    Ice.crc2.arc(this.position.x, this.position.y + 10, 20, 0, Math.PI, false); // Draw a smile (half circle)
+                    Ice.crc2.lineWidth = 5;
+                    Ice.crc2.strokeStyle = "black";
+                    Ice.crc2.stroke();
+                }
                 if (this.reachedSeat && Ice.chosenIceCream !== "") {
                     Ice.crc2.fillStyle = "black";
                     Ice.crc2.font = "10px Courier New";
