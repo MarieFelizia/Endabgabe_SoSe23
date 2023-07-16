@@ -72,15 +72,3 @@ body {
     margin-bottom: 10px; /* Füge optionalen Abstand zwischen den Kästen hinzu */
 }
 
-.border {
-    flex: 0.5;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    border: 1px solid;
-    border-radius: 5px;
-    border-color: #959492;
-    padding: 10px; /* Füge optionalen Innenabstand hinzu */
-    margin-bottom: 10px; /* Füge optionalen Abstand zwischen den Kästen hinzu */
-}
