@@ -31,12 +31,26 @@ var Ice;
         Ice.crc2.putImageData(Ice.imageData, 0, 0);
         for (let kunde of kundenArray) {
             if (!kunde.reachedSeat) {
-                kunde.move(1 / 500);
+                kunde.move(1 / 600);
+                if (kunde.position.x >= Ice.crc2.canvas.width) {
+                    kunde.position.x = -50; // Move the customer outside the canvas on the left side
+                }
             }
             else {
                 if (!kunde.stopped) {
-                    kunde.velocity = new Ice.Vector(0, 0); // Setze die Geschwindigkeit auf Null, um den Smiley anzuhalten
+                    kunde.velocity = new Ice.Vector(20, 0);
                     kunde.stopped = true;
+                }
+                kunde.stopTimer += 1 / 600; // Increase stop timer by 1/60th of a second (assuming 60 FPS)
+                if (kunde.stopTimer >= 10) { // Check if 10 seconds have passed
+                    if (kunde.position.x <= Ice.crc2.canvas.width + 1000) {
+                        kunde.position.x += 1; // Move the customer towards the right side
+                    }
+                    else {
+                        kunde.reachedSeat = false;
+                        kunde.stopped = false;
+                        kunde.position.x = 10; // Move the customer outside the canvas on the left side
+                    }
                 }
             }
             kunde.draw();
