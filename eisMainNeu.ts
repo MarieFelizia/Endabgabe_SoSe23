@@ -9,7 +9,6 @@ namespace Ice {
     export let imageData: ImageData; 
     
     let kundenArray: Kunden[] = [];
-    
   
     export let crc2: CanvasRenderingContext2D;
   
