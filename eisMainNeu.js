@@ -115,7 +115,7 @@ var Ice;
         Ice.crc2.fillStyle = "black";
         Ice.crc2.font = "10px Courier New";
         Ice.crc2.textAlign = "center";
-        Ice.crc2.fillText("Zitronen Eis", _position.x + 50, _position.y + 20);
+        Ice.crc2.fillText("Bananen Eis", _position.x + 50, _position.y + 20);
     }
     function drawIceBlue(_position) {
         Ice.crc2.beginPath();

@@ -146,7 +146,7 @@ namespace Ice {
       crc2.fillStyle = "black";
       crc2.font = "10px Courier New";
       crc2.textAlign = "center";
-      crc2.fillText("Zitronen Eis", _position.x + 50, _position.y + 20);
+      crc2.fillText("Bananen Eis", _position.x + 50, _position.y + 20);
   
     }
   
