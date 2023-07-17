@@ -51,7 +51,7 @@ var Ice;
         };
         data.push(newItem);
         generateContent(newItem);
-        await fetch(`https://webuser.hs-furtwangen.de/~ecklmari/Database/?command=insert&collection=TaskList&data=${JSON.stringify(newItem)}`);
+        await fetch(`https://webuser.hs-furtwangen.de/~ecklmari/Database/?command=insert&collection=data&data=${JSON.stringify(newItem)}`);
         IceName.value = "";
         IceSorte.value = "";
         IceKugel.value = "";
@@ -100,7 +100,7 @@ var Ice;
         container && container.appendChild(newDiv);
     }
     async function loaddata() {
-        const response = await fetch("https://webuser.hs-furtwangen.de/~ecklmari/Database/?command=find&collection=TaskList");
+        const response = await fetch("https://webuser.hs-furtwangen.de/~ecklmari/Database/?command=find&collection=data");
         const dataJSON = await response.json();
         data = dataJSON.data;
         for (let docId in data) {
@@ -120,7 +120,7 @@ var Ice;
             if (item.id == id) { // wir schauen ob das item mit docId die gesuchte item.id(man geht in ein item und vergleicht dort die "id") hat
                 dataBaseIndex = docId; // wenn wir die übereinstimmende id gefunden haben, speichern wir diese in dataBaseIndex
             }
-            const deleteUrl = `https://webuser.hs-furtwangen.de/~ecklmari/Database/?command=delete&collection=TaskList&id=${dataBaseIndex}`;
+            const deleteUrl = `https://webuser.hs-furtwangen.de/~ecklmari/Database/?command=delete&collection=data&id=${dataBaseIndex}`;
             await fetch(deleteUrl);
         }
     }
