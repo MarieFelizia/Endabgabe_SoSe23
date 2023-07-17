@@ -11,7 +11,7 @@ namespace Ice {
         streusel: boolean;
         sahne: boolean;
         preis: string;
-    
+      
     }
 
     let data: Item[] =[]
