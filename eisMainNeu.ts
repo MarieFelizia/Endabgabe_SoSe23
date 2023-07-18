@@ -64,6 +64,7 @@ namespace Ice {
             kunde.reachedSeat = false;
             kunde.stopped = false;
             kunde.position.x = 10; // Move the customer outside the canvas on the left side
+            choseIceCream(); 
           }
         }
       }
