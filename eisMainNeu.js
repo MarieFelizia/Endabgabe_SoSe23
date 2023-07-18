@@ -1,4 +1,12 @@
 "use strict";
+/*
+Name: <Marie Eckl>
+Matrikelnummer: <272409>
+Semester: <MKB2>
+Datum: <18.07.2023>
+Quellen: <Github Jirka, Developer Mozilla, ChatGPT, Aufgabe(n) aus EIA1, Code Pia Schwer aus Semester>
+
+*/
 var Ice;
 (function (Ice) {
     window.addEventListener("load", handleLoad);
