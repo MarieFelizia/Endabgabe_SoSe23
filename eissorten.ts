@@ -1,6 +1,6 @@
 namespace Ice {
 
-    
+
     interface Vector {
         x: number;
         y: number;
@@ -11,7 +11,7 @@ namespace Ice {
         crc2.font = "10px Courier New";
         crc2.textAlign = "center";
         crc2.fillText("1. gemischter Eisbecher mit Sahne", _position.x + 100, _position.y + 10);
-        
+
         crc2.beginPath();
         crc2.strokeStyle = "grey"; // Farbe der Umrandung
         crc2.lineWidth = 2;
@@ -50,14 +50,14 @@ namespace Ice {
         let frequency = 0.2; // Frequenz der Schlangenlinie
         let startX = _position.x + 60; // Start-X-Position der Linie
         let startY = _position.y + 40; // Start-Y-Position der Linie
-    
+
         crc2.moveTo(startX, startY); // Startpunkt der Linie
-    
+
         for (let x = startX; x < startX + 80; x += 2) {
             let y = startY + amplitude * Math.sin(frequency * (x - startX)); // Berechnung der Y-Position anhand der Sinus-Funktion
             crc2.lineTo(x, y); // Linie zum aktuellen Punkt zeichnen
         }
-    
+
         crc2.stroke();
         crc2.closePath();
 
@@ -70,7 +70,7 @@ namespace Ice {
         crc2.font = "10px Courier New";
         crc2.textAlign = "center";
         crc2.fillText("2. Kirscheis in der Waffel", _position.x + 100, _position.y + 10);
-        
+
         crc2.beginPath();
         crc2.strokeStyle = "grey"; // Farbe der Umrandung
         crc2.lineWidth = 2;
@@ -86,7 +86,7 @@ namespace Ice {
 
         let triangleHeight = 60; // Höhe des Dreiecks (ungefähr die Hälfte des Kastens)
         let triangleWidth = 80; // Breite des Dreiecks (ungefähr die Hälfte des Kastens)
-    
+
         crc2.beginPath();
         crc2.moveTo(_position.x + 100, _position.y + 100); // Startpunkt unten in der Mitte
         crc2.lineTo(_position.x + 120 - triangleWidth / 2, _position.y + triangleHeight); // Linie zur linken Ecke
@@ -94,11 +94,11 @@ namespace Ice {
         crc2.fillStyle = "#d2b48c"; // Farbe des Dreiecks (hellbraun)
         crc2.fill();
         crc2.closePath();
-        
-        }
-    
 
-    
+    }
+
+
+
 
     export function drawSorte3(_position: Vector) {
 
@@ -145,22 +145,18 @@ namespace Ice {
         let frequency = 0.2; // Frequenz der Schlangenlinie
         let startX = _position.x + 60; // Start-X-Position der Linie
         let startY = _position.y + 45; // Start-Y-Position der Linie
-    
+
         crc2.moveTo(startX, startY); // Startpunkt der Linie
-    
+
         for (let x = startX; x < startX + 80; x += 2) {
             let y = startY + amplitude * Math.sin(frequency * (x - startX)); // Berechnung der Y-Position anhand der Sinus-Funktion
             crc2.lineTo(x, y); // Linie zum aktuellen Punkt zeichnen
         }
-    
+
         crc2.stroke();
         crc2.closePath();
 
-    
+
     }
-
-
-
-
 
 }

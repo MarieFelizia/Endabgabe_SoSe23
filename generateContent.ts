@@ -1,6 +1,6 @@
-namespace Ice { 
+namespace Ice {
     window.addEventListener("load", handleLoad);
-    
+
     export interface Item {
         id: number;
         name: string;
@@ -11,10 +11,10 @@ namespace Ice {
         streusel: boolean;
         sahne: boolean;
         preis: string;
-      
+
     }
 
-    let data: Item[] =[]
+    let data: Item[] = []
 
 
 
@@ -22,7 +22,7 @@ namespace Ice {
         let addTask: HTMLButtonElement = <HTMLButtonElement>document.getElementById("button");
         addTask.addEventListener("click", elements);
         loaddata();
-        
+
     };
 
     async function elements(): Promise<void> {
@@ -58,24 +58,24 @@ namespace Ice {
             for (let docId in data) {//indem wir alle vorhandenen IDs in data durchgehen. Wenn wir eine gleiche ID finden, 
                 let item = data[docId]//setzen wir idExists auf true, um zu zeigen, dass die aktuelle Nummer doch nicht einzigartig ist.
                 if (item.id == newid) {// Dann suchen wir weiter nach einer einzigartigen Nummer.
-                    idExists = true; 
+                    idExists = true;
                 }
             }
         }
 
 
         const newItem: Item = {
-            
-                    id: newid,
-                    name: nameValue,
-                    sorte: sorteValue,
-                    kugel: kugelValue,
-                    erdbeere: erdbeersoßeValue,
-                    schoko: schokosoßeValue,
-                    sahne: sahneValue, 
-                    streusel: streuselValue,
-                    preis: preisValue,
-            
+
+            id: newid,
+            name: nameValue,
+            sorte: sorteValue,
+            kugel: kugelValue,
+            erdbeere: erdbeersoßeValue,
+            schoko: schokosoßeValue,
+            sahne: sahneValue,
+            streusel: streuselValue,
+            preis: preisValue,
+
         };
 
 
@@ -89,7 +89,7 @@ namespace Ice {
         IceKugel.value = "";
         IcePreis.value = "";
 
-        
+
     };
 
 
@@ -133,7 +133,7 @@ namespace Ice {
             });
         }
 
-        
+
 
         let container = document.querySelector('#OrderList');
         container && container.appendChild(newDiv);
@@ -143,7 +143,7 @@ namespace Ice {
         const dataJSON = await response.json();
         data = dataJSON.data;
         for (let docId in data) {
-            let item = data[docId] 
+            let item = data[docId]
 
             generateContent(item);
         }
@@ -167,5 +167,5 @@ namespace Ice {
             await fetch(deleteUrl);
         }
     }
-    }
+}
 

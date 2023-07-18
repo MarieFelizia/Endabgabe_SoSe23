@@ -1,7 +1,7 @@
 namespace Ice {
 
     export let chosenIceCream: string = ""
-    
+
 
     export class Kunden {
         position: Vector;
@@ -10,7 +10,7 @@ namespace Ice {
         reachedSeat: boolean;
         stopped: boolean;
         stopTimer: number;
-       
+
 
         constructor(_size: number, _position?: Vector) {
             if (_position)
@@ -23,7 +23,7 @@ namespace Ice {
             this.reachedSeat = false;
             this.stopped = false;
             this.stopTimer = 0;
-            
+
         }
 
         move(_timeslice: number): void {
@@ -58,47 +58,47 @@ namespace Ice {
             }
         }
 
-        
+
 
         draw(): void {
             if (!this.reachedSeat || this.stopped) {
-              crc2.beginPath();
-              crc2.arc(this.position.x, this.position.y, 40, 0, 2 * Math.PI);
-              crc2.fillStyle = "yellow";
-              crc2.fill();
-          
-              crc2.beginPath();
-              crc2.arc(this.position.x - 15, this.position.y - 20, 8, 0, 2 * Math.PI);
-              crc2.arc(this.position.x + 15, this.position.y - 20, 8, 0, 2 * Math.PI);
-              crc2.fillStyle = "black";
-              crc2.fill();
-          
-              if (!this.reachedSeat) {
                 crc2.beginPath();
-                crc2.moveTo(this.position.x - 20, this.position.y + 10); // Start point of the mouth
-                crc2.lineTo(this.position.x + 20, this.position.y + 10); // End point of the mouth
-                crc2.lineWidth = 5;
-                crc2.strokeStyle = "black";
-                crc2.stroke();
-              } else {
-                crc2.beginPath();
-                crc2.arc(this.position.x, this.position.y + 10, 20, 0, Math.PI, false); // Draw a smile (half circle)
-                crc2.lineWidth = 5;
-                crc2.strokeStyle = "black";
-                crc2.stroke();
-              }
-          
-              if (this.reachedSeat && chosenIceCream !== "") {
-                crc2.fillStyle = "black";
-                crc2.font = "10px Courier New";
-                crc2.textAlign = "center";
-                crc2.fillText(chosenIceCream, this.position.x, this.position.y + 60);
-              }
-            }
-          }
-          
+                crc2.arc(this.position.x, this.position.y, 40, 0, 2 * Math.PI);
+                crc2.fillStyle = "yellow";
+                crc2.fill();
 
-          
-          
+                crc2.beginPath();
+                crc2.arc(this.position.x - 15, this.position.y - 20, 8, 0, 2 * Math.PI);
+                crc2.arc(this.position.x + 15, this.position.y - 20, 8, 0, 2 * Math.PI);
+                crc2.fillStyle = "black";
+                crc2.fill();
+
+                if (!this.reachedSeat) {
+                    crc2.beginPath();
+                    crc2.moveTo(this.position.x - 20, this.position.y + 10); // Start point of the mouth
+                    crc2.lineTo(this.position.x + 20, this.position.y + 10); // End point of the mouth
+                    crc2.lineWidth = 5;
+                    crc2.strokeStyle = "black";
+                    crc2.stroke();
+                } else {
+                    crc2.beginPath();
+                    crc2.arc(this.position.x, this.position.y + 10, 20, 0, Math.PI, false); // Draw a smile (half circle)
+                    crc2.lineWidth = 5;
+                    crc2.strokeStyle = "black";
+                    crc2.stroke();
+                }
+
+                if (this.reachedSeat && chosenIceCream !== "") {
+                    crc2.fillStyle = "black";
+                    crc2.font = "10px Courier New";
+                    crc2.textAlign = "center";
+                    crc2.fillText(chosenIceCream, this.position.x, this.position.y + 60);
+                }
+            }
+        }
+
+
+
+
     }
 }
