@@ -138,6 +138,7 @@ namespace Ice {
         let container = document.querySelector('#OrderList');
         container && container.appendChild(newDiv);
     }
+    
     async function loaddata(): Promise<void> {
         const response = await fetch("https://webuser.hs-furtwangen.de/~ecklmari/Database/?command=find&collection=data");
         const dataJSON = await response.json();
