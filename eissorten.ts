@@ -20,25 +20,25 @@ namespace Ice {
         crc2.closePath();
 
         crc2.beginPath();
-        crc2.arc(_position.x + 80, _position.y + 50, 20, 0, 2 * Math.PI); // Vollständiger Kreis
+        crc2.arc(_position.x + 80, _position.y + 50, 20, 0, 2 * Math.PI); // Kreis (Kugel) zeichnen 
         crc2.fillStyle = "#d0e8f2"; // Farbe des Kreises
         crc2.fill();
         crc2.closePath();
 
         crc2.beginPath();
-        crc2.arc(_position.x + 120, _position.y + 50, 20, 0, 2 * Math.PI); // Vollständiger Kreis
+        crc2.arc(_position.x + 120, _position.y + 50, 20, 0, 2 * Math.PI); // Kreis (Kugel) zeichnen 
         crc2.fillStyle = "#cfffe5"; // Farbe des Kreises
         crc2.fill();
         crc2.closePath();
 
         crc2.beginPath();
-        crc2.arc(_position.x + 100, _position.y + 30, 20, 0, 2 * Math.PI); // Vollständiger Kreis
+        crc2.arc(_position.x + 100, _position.y + 30, 20, 0, 2 * Math.PI); // Kreis (Kugel) zeichnen 
         crc2.fillStyle = "#fac9d3"; // Farbe des Kreises
         crc2.fill();
         crc2.closePath();
 
         crc2.beginPath();
-        crc2.arc(_position.x + 100, _position.y + 60, 40, 0, Math.PI, false); // Halbkreis mit umgekehrter Richtung (im Uhrzeigersinn)
+        crc2.arc(_position.x + 100, _position.y + 60, 40, 0, Math.PI, false); // Halbkreis mit umgekehrter Richtung zeichnen
         crc2.fillStyle = "grey"; // Farbe des Halbkreises
         crc2.fill();
         crc2.closePath();
@@ -79,19 +79,19 @@ namespace Ice {
         crc2.closePath();
 
         crc2.beginPath();
-        crc2.arc(_position.x + 100, _position.y + 45, 20, 0, 2 * Math.PI); // Vollständiger Kreis
+        crc2.arc(_position.x + 100, _position.y + 45, 20, 0, 2 * Math.PI); // // Kreis (Kugel) zeichnen 
         crc2.fillStyle = "#720004"; // Farbe des Kreises
         crc2.fill();
         crc2.closePath();
 
-        let triangleHeight = 60; // Höhe des Dreiecks (ungefähr die Hälfte des Kastens)
-        let triangleWidth = 80; // Breite des Dreiecks (ungefähr die Hälfte des Kastens)
+        let triangleHeight = 60; // Höhe des Dreiecks 
+        let triangleWidth = 80; // Breite des Dreiecks 
 
         crc2.beginPath();
         crc2.moveTo(_position.x + 100, _position.y + 100); // Startpunkt unten in der Mitte
         crc2.lineTo(_position.x + 120 - triangleWidth / 2, _position.y + triangleHeight); // Linie zur linken Ecke
         crc2.lineTo(_position.x + 80 + triangleWidth / 2, _position.y + triangleHeight); // Linie zur rechten Ecke
-        crc2.fillStyle = "#d2b48c"; // Farbe des Dreiecks (hellbraun)
+        crc2.fillStyle = "#d2b48c"; // Farbe des Dreiecks 
         crc2.fill();
         crc2.closePath();
 
@@ -115,13 +115,13 @@ namespace Ice {
         crc2.closePath();
 
         crc2.beginPath();
-        crc2.arc(_position.x + 80, _position.y + 50, 20, 0, 2 * Math.PI); // Vollständiger Kreis
+        crc2.arc(_position.x + 80, _position.y + 50, 20, 0, 2 * Math.PI); // Kreis (Kugel) zeichnen 
         crc2.fillStyle = "#fffdd0"; // Farbe des Kreises
         crc2.fill();
         crc2.closePath();
 
         crc2.beginPath();
-        crc2.arc(_position.x + 120, _position.y + 50, 20, 0, 2 * Math.PI); // Vollständiger Kreis
+        crc2.arc(_position.x + 120, _position.y + 50, 20, 0, 2 * Math.PI); // Kreis (Kugel) zeichnen 
         crc2.fillStyle = "#fffdd0"; // Farbe des Kreises
         crc2.fill();
         crc2.closePath();
@@ -133,7 +133,7 @@ namespace Ice {
         crc2.closePath();
 
         crc2.beginPath();
-        crc2.arc(_position.x + 100, _position.y + 60, 40, 0, Math.PI, false); // Halbkreis mit umgekehrter Richtung (im Uhrzeigersinn)
+        crc2.arc(_position.x + 100, _position.y + 60, 40, 0, Math.PI, false); // Halbkreis mit umgekehrter Richtung 
         crc2.fillStyle = "grey"; // Farbe des Halbkreises
         crc2.fill();
         crc2.closePath();

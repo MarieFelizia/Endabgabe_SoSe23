@@ -13,22 +13,22 @@ var Ice;
         Ice.crc2.stroke();
         Ice.crc2.closePath();
         Ice.crc2.beginPath();
-        Ice.crc2.arc(_position.x + 80, _position.y + 50, 20, 0, 2 * Math.PI); // Vollständiger Kreis
+        Ice.crc2.arc(_position.x + 80, _position.y + 50, 20, 0, 2 * Math.PI); // Kreis (Kugel) zeichnen 
         Ice.crc2.fillStyle = "#d0e8f2"; // Farbe des Kreises
         Ice.crc2.fill();
         Ice.crc2.closePath();
         Ice.crc2.beginPath();
-        Ice.crc2.arc(_position.x + 120, _position.y + 50, 20, 0, 2 * Math.PI); // Vollständiger Kreis
+        Ice.crc2.arc(_position.x + 120, _position.y + 50, 20, 0, 2 * Math.PI); // Kreis (Kugel) zeichnen 
         Ice.crc2.fillStyle = "#cfffe5"; // Farbe des Kreises
         Ice.crc2.fill();
         Ice.crc2.closePath();
         Ice.crc2.beginPath();
-        Ice.crc2.arc(_position.x + 100, _position.y + 30, 20, 0, 2 * Math.PI); // Vollständiger Kreis
+        Ice.crc2.arc(_position.x + 100, _position.y + 30, 20, 0, 2 * Math.PI); // Kreis (Kugel) zeichnen 
         Ice.crc2.fillStyle = "#fac9d3"; // Farbe des Kreises
         Ice.crc2.fill();
         Ice.crc2.closePath();
         Ice.crc2.beginPath();
-        Ice.crc2.arc(_position.x + 100, _position.y + 60, 40, 0, Math.PI, false); // Halbkreis mit umgekehrter Richtung (im Uhrzeigersinn)
+        Ice.crc2.arc(_position.x + 100, _position.y + 60, 40, 0, Math.PI, false); // Halbkreis mit umgekehrter Richtung zeichnen
         Ice.crc2.fillStyle = "grey"; // Farbe des Halbkreises
         Ice.crc2.fill();
         Ice.crc2.closePath();
@@ -60,17 +60,17 @@ var Ice;
         Ice.crc2.stroke();
         Ice.crc2.closePath();
         Ice.crc2.beginPath();
-        Ice.crc2.arc(_position.x + 100, _position.y + 45, 20, 0, 2 * Math.PI); // Vollständiger Kreis
+        Ice.crc2.arc(_position.x + 100, _position.y + 45, 20, 0, 2 * Math.PI); // // Kreis (Kugel) zeichnen 
         Ice.crc2.fillStyle = "#720004"; // Farbe des Kreises
         Ice.crc2.fill();
         Ice.crc2.closePath();
-        let triangleHeight = 60; // Höhe des Dreiecks (ungefähr die Hälfte des Kastens)
-        let triangleWidth = 80; // Breite des Dreiecks (ungefähr die Hälfte des Kastens)
+        let triangleHeight = 60; // Höhe des Dreiecks 
+        let triangleWidth = 80; // Breite des Dreiecks 
         Ice.crc2.beginPath();
         Ice.crc2.moveTo(_position.x + 100, _position.y + 100); // Startpunkt unten in der Mitte
         Ice.crc2.lineTo(_position.x + 120 - triangleWidth / 2, _position.y + triangleHeight); // Linie zur linken Ecke
         Ice.crc2.lineTo(_position.x + 80 + triangleWidth / 2, _position.y + triangleHeight); // Linie zur rechten Ecke
-        Ice.crc2.fillStyle = "#d2b48c"; // Farbe des Dreiecks (hellbraun)
+        Ice.crc2.fillStyle = "#d2b48c"; // Farbe des Dreiecks 
         Ice.crc2.fill();
         Ice.crc2.closePath();
     }
@@ -87,12 +87,12 @@ var Ice;
         Ice.crc2.stroke();
         Ice.crc2.closePath();
         Ice.crc2.beginPath();
-        Ice.crc2.arc(_position.x + 80, _position.y + 50, 20, 0, 2 * Math.PI); // Vollständiger Kreis
+        Ice.crc2.arc(_position.x + 80, _position.y + 50, 20, 0, 2 * Math.PI); // Kreis (Kugel) zeichnen 
         Ice.crc2.fillStyle = "#fffdd0"; // Farbe des Kreises
         Ice.crc2.fill();
         Ice.crc2.closePath();
         Ice.crc2.beginPath();
-        Ice.crc2.arc(_position.x + 120, _position.y + 50, 20, 0, 2 * Math.PI); // Vollständiger Kreis
+        Ice.crc2.arc(_position.x + 120, _position.y + 50, 20, 0, 2 * Math.PI); // Kreis (Kugel) zeichnen 
         Ice.crc2.fillStyle = "#fffdd0"; // Farbe des Kreises
         Ice.crc2.fill();
         Ice.crc2.closePath();
@@ -102,7 +102,7 @@ var Ice;
         Ice.crc2.fill();
         Ice.crc2.closePath();
         Ice.crc2.beginPath();
-        Ice.crc2.arc(_position.x + 100, _position.y + 60, 40, 0, Math.PI, false); // Halbkreis mit umgekehrter Richtung (im Uhrzeigersinn)
+        Ice.crc2.arc(_position.x + 100, _position.y + 60, 40, 0, Math.PI, false); // Halbkreis mit umgekehrter Richtung 
         Ice.crc2.fillStyle = "grey"; // Farbe des Halbkreises
         Ice.crc2.fill();
         Ice.crc2.closePath();

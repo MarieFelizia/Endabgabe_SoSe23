@@ -2,7 +2,6 @@ namespace Ice {
 
     export let chosenIceCream: string = ""
 
-
     export class Kunden {
         position: Vector;
         velocity: Vector;
@@ -11,28 +10,28 @@ namespace Ice {
         stopped: boolean;
         stopTimer: number;
 
-
         constructor(_size: number, _position?: Vector) {
-            if (_position)
-                this.position = _position;
+            if (_position) //überprüfen ob position übergeben wurde
+                this.position = _position; // wenn ja, position auf übergebenen wert setzen 
             else
-                this.position = new Vector(30, 100);
+                this.position = new Vector(30, 100); // wenn nicht, dann setzen wir position auf standartwert
 
-            this.velocity = new Vector(30, 0);
-            this.size = _size;
-            this.reachedSeat = false;
-            this.stopped = false;
-            this.stopTimer = 0;
+            this.velocity = new Vector(30, 0); // Geschwindigkeit
+            this.size = _size;                 // Größe des Übergebenen werts
+            this.reachedSeat = false;          // festlegen, dass Sitzplatz noch nicht erreicht wurde
+            this.stopped = false;              // festlegen, dass das Objekt nicht angehalten ist 
+            this.stopTimer = 0;                // Timer auf 0 setzen 
 
         }
 
         move(_timeslice: number): void {
-            if (!this.reachedSeat) {
-                if (!this.stopped) {
+            if (!this.reachedSeat) { // ist Smiley angehalten
+                if (!this.stopped) { // Versatz berechnen mit Geschwindigkeit und Zeitschritt
                     let offset: Vector = new Vector(this.velocity.x, this.velocity.y);
                     offset.scale(_timeslice);
-                    this.position.add(offset);
+                    this.position.add(offset); // Aktualisieren Position
 
+                    // liegt Position außerhalb des Canvas
                     if (this.position.x < 0)
                         this.position.x += crc2.canvas.width;
                     if (this.position.y < 0)
@@ -43,17 +42,18 @@ namespace Ice {
                         this.position.y -= crc2.canvas.height;
                 }
 
+                // überprüfen ob Smiley angehalten hat
                 if (this.position.x >= 250 && this.position.x <= 450 && this.position.y >= 460 && this.position.y <= 540) {
-                    this.reachedSeat = true;
+                    this.reachedSeat = true; // Smiley hat Platz erreicht und angehalten
                     this.stopTimer = 0;
                 }
-            } else {
+            } else {                                    // ist genug zeit vergangen, sodass Smiley weiter kann 
                 this.stopTimer += _timeslice;
-                if (this.stopTimer >= 10) {
+                if (this.stopTimer >= 10) {             // Smiley kann weitergehen 
                     this.reachedSeat = false;
                     this.stopped = false;
                 } else {
-                    this.stopped = true;
+                    this.stopped = true;                // Smiley hält an 
                 }
             }
         }
@@ -61,7 +61,7 @@ namespace Ice {
 
 
         draw(): void {
-            if (!this.reachedSeat || this.stopped) {
+            if (!this.reachedSeat || this.stopped) { // wenn Smiley an Sitz angekommen ist und stoppt
                 crc2.beginPath();
                 crc2.arc(this.position.x, this.position.y, 40, 0, 2 * Math.PI);
                 crc2.fillStyle = "yellow";
@@ -73,22 +73,24 @@ namespace Ice {
                 crc2.fillStyle = "black";
                 crc2.fill();
 
-                if (!this.reachedSeat) {
+                if (!this.reachedSeat) {    // bis Smiley am Platz ist
                     crc2.beginPath();
-                    crc2.moveTo(this.position.x - 20, this.position.y + 10); // Start point of the mouth
-                    crc2.lineTo(this.position.x + 20, this.position.y + 10); // End point of the mouth
-                    crc2.lineWidth = 5;
-                    crc2.strokeStyle = "black";
-                    crc2.stroke();
-                } else {
-                    crc2.beginPath();
-                    crc2.arc(this.position.x, this.position.y + 10, 20, 0, Math.PI, false); // Draw a smile (half circle)
+                    crc2.moveTo(this.position.x - 20, this.position.y + 10); // Startpunkt Mund
+                    crc2.lineTo(this.position.x + 20, this.position.y + 10); // Endpunkt Mund
                     crc2.lineWidth = 5;
                     crc2.strokeStyle = "black";
                     crc2.stroke();
                 }
 
-                if (this.reachedSeat && chosenIceCream !== "") {
+                else {                // wenn smiley am Platz ist
+                    crc2.beginPath();
+                    crc2.arc(this.position.x, this.position.y + 10, 20, 0, Math.PI, false); // Glücklichen Smiley zeichnen 
+                    crc2.lineWidth = 5;
+                    crc2.strokeStyle = "black";
+                    crc2.stroke();
+                }
+
+                if (this.reachedSeat && chosenIceCream !== "") { // wenn Smiley am Platz ist und Eis ausgesucht hat 
                     crc2.fillStyle = "black";
                     crc2.font = "10px Courier New";
                     crc2.textAlign = "center";
@@ -96,9 +98,5 @@ namespace Ice {
                 }
             }
         }
-
-
-
-
     }
 }

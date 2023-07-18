@@ -2,6 +2,7 @@
 var Ice;
 (function (Ice) {
     let counter = 0;
+    // key events füür tasten 1, 2 und 3 festlegen 
     window.addEventListener("DOMContentLoaded", () => {
         window.addEventListener("keydown", (event) => {
             if (event.key === "1") {
@@ -15,6 +16,7 @@ var Ice;
             }
         });
     });
+    // wenn Taste 1, 2 oder 3 gedrückt wird dann erhöt sich der Counter um die deklarierte nummmer 
     function increaseCounter1() {
         counter += 3;
         updateCounter();
@@ -27,6 +29,7 @@ var Ice;
         counter += 4;
         updateCounter();
     }
+    // Counter wird geupdatet 
     function updateCounter() {
         let counterElement = document.querySelector("#Einnahme");
         if (counterElement) {
@@ -34,4 +37,5 @@ var Ice;
         }
     }
 })(Ice || (Ice = {}));
+;
 //# sourceMappingURL=preis.js.map

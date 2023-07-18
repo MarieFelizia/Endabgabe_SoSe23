@@ -3,7 +3,8 @@ var Ice;
 (function (Ice) {
     function drawBackground() {
         let gradient = Ice.crc2.createLinearGradient(0, 0, 0, Ice.crc2.canvas.height);
-        gradient.addColorStop(1, "#c8c6c4");
+        gradient.addColorStop(0.6, "#c8c6c4");
+        gradient.addColorStop(1, "#b4b4b4");
         Ice.crc2.fillStyle = gradient;
         Ice.crc2.fillRect(0, 0, Ice.crc2.canvas.width, Ice.crc2.canvas.height);
         drawIcePurple({ x: 25, y: 25 });
@@ -27,6 +28,7 @@ var Ice;
     }
     Ice.drawBackground = drawBackground;
     ;
+    //zuerst ein Rechteck zeichnen und das mit Farbe füllen, dann mithilfe von dem Canvas Text Element Text hinzufügen
     function drawIcePurple(_position) {
         Ice.crc2.beginPath();
         Ice.crc2.fillStyle = "#d0c7e3";
@@ -117,9 +119,9 @@ var Ice;
     ;
     function drawChoclate(_position) {
         const gradient = Ice.crc2.createLinearGradient(_position.x, _position.y, _position.x + 125, _position.y + 100);
-        gradient.addColorStop(0, "#8B4513"); // Dunkle Schokoladenfarbe
-        gradient.addColorStop(0.5, "#D2691E"); // Helle Schokoladenfarbe
-        gradient.addColorStop(1, "#8B4513"); // Dunkle Schokoladenfarbe
+        gradient.addColorStop(0, "#8B4513"); // Dunkles Braun
+        gradient.addColorStop(0.5, "#D2691E"); // Helles Braun
+        gradient.addColorStop(1, "#8B4513"); // Dunkles Braun
         Ice.crc2.fillStyle = gradient;
         Ice.crc2.beginPath();
         Ice.crc2.fillRect(_position.x, _position.y, 100, 100);
@@ -132,9 +134,9 @@ var Ice;
     ;
     function drawStrawberry(_position) {
         const gradient = Ice.crc2.createLinearGradient(_position.x, _position.y, _position.x + 125, _position.y + 100);
-        gradient.addColorStop(0, "#dc0900"); // Dunkle Schokoladenfarbe
-        gradient.addColorStop(0.5, "#ff5348"); // Helle Schokoladenfarbe
-        gradient.addColorStop(1, "#dc0900"); // Dunkle Schokoladenfarbe
+        gradient.addColorStop(0, "#dc0900"); // Dunkles Rot
+        gradient.addColorStop(0.5, "#ff5348"); // Helles Rot
+        gradient.addColorStop(1, "#dc0900"); // Dunkles Rot 
         Ice.crc2.fillStyle = gradient;
         Ice.crc2.beginPath();
         Ice.crc2.fillRect(_position.x, _position.y, 100, 100);
@@ -157,9 +159,9 @@ var Ice;
         Ice.crc2.closePath();
         for (let i = 0; i < 100; i++) { // Anzahl der Streusel anpassen
             const sprinkleColor = sprinkleColors[Math.floor(Math.random() * sprinkleColors.length)]; // Zufällige Farbe auswählen
-            const sprinkleX = _position.x + Math.random() * (100 - sprinkleWidth); // Zufällige X-Position innerhalb des Rechtecks
-            const sprinkleY = _position.y + Math.random() * (100 - sprinkleHeight); // Zufällige Y-Position innerhalb des Rechtecks
-            const sprinkleRotation = Math.random() * Math.PI * 2; // Zufällige Rotation (im Bogenmaß) generieren
+            const sprinkleX = _position.x + Math.random() * (100 - sprinkleWidth); // Zufällige X-Position innerhalb des Rechtecks festlegen
+            const sprinkleY = _position.y + Math.random() * (100 - sprinkleHeight); // Zufällige Y-Position innerhalb des Rechtecks festlegen
+            const sprinkleRotation = Math.random() * Math.PI * 2; // Zufällige Rotation festlegen
             Ice.crc2.save(); // Aktuellen Zustand des Canvas-Kontexts speichern
             Ice.crc2.translate(sprinkleX + sprinkleWidth / 2, sprinkleY + sprinkleHeight / 2); // Zu Position des Streusels verschieben
             Ice.crc2.rotate(sprinkleRotation); // Rotation anwenden

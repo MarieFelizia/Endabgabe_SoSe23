@@ -57,7 +57,7 @@ namespace Ice {
       if (!kunde.reachedSeat) {
         kunde.move(1 / 600);
         if (kunde.position.x >= crc2.canvas.width) {
-          kunde.position.x = -50; // Move the customer outside the canvas on the left side
+          kunde.position.x = -50; // bewegt Kundi nach rechts
         }
       } else {
         if (!kunde.stopped) {
@@ -65,14 +65,14 @@ namespace Ice {
           kunde.stopped = true;
         }
 
-        kunde.stopTimer += 1 / 600; // Increase stop timer by 1/60th of a second (assuming 60 FPS)
-        if (kunde.stopTimer >= 10) { // Check if 10 seconds have passed
+        kunde.stopTimer += 1 / 600; 
+        if (kunde.stopTimer >= 10) { // checkt ob 10 sekunden vorbei sind
           if (kunde.position.x <= crc2.canvas.width + 1000) {
-            kunde.position.x += 1; // Move the customer towards the right side
+            kunde.position.x += 1; // bewegt Kundi nach rechts außerhalb des Canvas
           } else {
             kunde.reachedSeat = false;
             kunde.stopped = false;
-            kunde.position.x = 10; // Move the customer outside the canvas on the left side
+            kunde.position.x = 10; // bewegt Kundi nach außen auf der linken Seite
             choseIceCream(); 
           }
         }
@@ -83,7 +83,7 @@ namespace Ice {
     requestAnimationFrame(moveKundi);
   }
 
-
+// generiert random case für den Eiswunsch des Kundis
   function choseIceCream(): void {
     let randomChoice = Math.floor(Math.random() * 3) + 1;
 
@@ -101,7 +101,7 @@ namespace Ice {
   }
 
   
-
+// wenn die Taste 1, 2 oder 3 gedrückt wird, dann wird die jeweillige sorte gezeichnet (eigentlich) und in der Konsole ausgegeben
   function handleKeyDown1(event: KeyboardEvent): void {
     if (event.key === "1") {
       drawSorte1({ x: 400, y: 250 });

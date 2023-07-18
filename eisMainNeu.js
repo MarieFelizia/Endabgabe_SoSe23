@@ -41,7 +41,7 @@ var Ice;
             if (!kunde.reachedSeat) {
                 kunde.move(1 / 600);
                 if (kunde.position.x >= Ice.crc2.canvas.width) {
-                    kunde.position.x = -50; // Move the customer outside the canvas on the left side
+                    kunde.position.x = -50; // bewegt Kundi nach rechts
                 }
             }
             else {
@@ -49,15 +49,15 @@ var Ice;
                     kunde.velocity = new Ice.Vector(20, 0);
                     kunde.stopped = true;
                 }
-                kunde.stopTimer += 1 / 600; // Increase stop timer by 1/60th of a second (assuming 60 FPS)
-                if (kunde.stopTimer >= 10) { // Check if 10 seconds have passed
+                kunde.stopTimer += 1 / 600;
+                if (kunde.stopTimer >= 10) { // checkt ob 10 sekunden vorbei sind
                     if (kunde.position.x <= Ice.crc2.canvas.width + 1000) {
-                        kunde.position.x += 1; // Move the customer towards the right side
+                        kunde.position.x += 1; // bewegt Kundi nach rechts außerhalb des Canvas
                     }
                     else {
                         kunde.reachedSeat = false;
                         kunde.stopped = false;
-                        kunde.position.x = 10; // Move the customer outside the canvas on the left side
+                        kunde.position.x = 10; // bewegt Kundi nach außen auf der linken Seite
                         choseIceCream();
                     }
                 }
@@ -66,6 +66,7 @@ var Ice;
         }
         requestAnimationFrame(moveKundi);
     }
+    // generiert random case für den Eiswunsch des Kundis
     function choseIceCream() {
         let randomChoice = Math.floor(Math.random() * 3) + 1;
         switch (randomChoice) {
@@ -80,6 +81,7 @@ var Ice;
                 break;
         }
     }
+    // wenn die Taste 1, 2 oder 3 gedrückt wird, dann wird die jeweillige sorte gezeichnet (eigentlich) und in der Konsole ausgegeben
     function handleKeyDown1(event) {
         if (event.key === "1") {
             Ice.drawSorte1({ x: 400, y: 250 });
