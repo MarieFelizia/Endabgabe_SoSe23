@@ -20,10 +20,12 @@ namespace Ice {
         drawIceWhite({ x: 150, y: 150 });
         drawIceMint({ x: 275, y: 150 });
         drawIceRed({ x: 400, y: 150 });
+        
         drawChoclate({ x: 25, y: 275 });
         drawStrawberry({ x: 150, y: 275 });
         drawCream({ x: 275, y: 275 });
         drawSprinkles({ x: 400, y: 275 });
+        
         drawSeat({ x: 250, y: 500 });
         drawTable({ x: 25, y: 400 });
 

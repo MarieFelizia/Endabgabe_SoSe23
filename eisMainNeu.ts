@@ -8,6 +8,9 @@ namespace Ice {
 
   export let crc2: CanvasRenderingContext2D;
 
+  window.addEventListener("keydown", handleKeyDown1)
+  window.addEventListener("keydown", handleKeyDown2)
+  window.addEventListener("keydown", handleKeyDown3)
 
   function handleLoad(_event: Event): void {
     let canvas: HTMLCanvasElement = document.querySelector("canvas")!;
@@ -21,9 +24,6 @@ namespace Ice {
     window.setInterval(moveKundi, 10);
     choseIceCream();
 
-    window.addEventListener("keydown", handleKeyDown1)
-    window.addEventListener("keydown", handleKeyDown2)
-    window.addEventListener("keydown", handleKeyDown3)
   };
 
 
@@ -76,7 +76,7 @@ namespace Ice {
 
 
   function choseIceCream(): void {
-    const randomChoice = Math.floor(Math.random() * 3) + 1;
+    let randomChoice = Math.floor(Math.random() * 3) + 1;
 
     switch (randomChoice) {
       case 1:

@@ -3,6 +3,9 @@ var Ice;
 (function (Ice) {
     window.addEventListener("load", handleLoad);
     let kundenArray = [];
+    window.addEventListener("keydown", handleKeyDown1);
+    window.addEventListener("keydown", handleKeyDown2);
+    window.addEventListener("keydown", handleKeyDown3);
     function handleLoad(_event) {
         let canvas = document.querySelector("canvas");
         Ice.crc2 = canvas.getContext("2d");
@@ -11,9 +14,6 @@ var Ice;
         createKundi();
         window.setInterval(moveKundi, 10);
         choseIceCream();
-        window.addEventListener("keydown", handleKeyDown1);
-        window.addEventListener("keydown", handleKeyDown2);
-        window.addEventListener("keydown", handleKeyDown3);
     }
     ;
     function createKundi() {
@@ -59,7 +59,7 @@ var Ice;
         requestAnimationFrame(moveKundi);
     }
     function choseIceCream() {
-        const randomChoice = Math.floor(Math.random() * 3) + 1;
+        let randomChoice = Math.floor(Math.random() * 3) + 1;
         switch (randomChoice) {
             case 1:
                 Ice.chosenIceCream = "Ich hätte gerne einen gemischten Eisbecher mit Sahne";
