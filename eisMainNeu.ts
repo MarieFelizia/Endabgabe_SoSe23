@@ -7,9 +7,6 @@ Quellen: <Github Jirka, Developer Mozilla, ChatGPT, Aufgabe(n) aus EIA1, Code Pi
 
 */
 
-
-
-
 namespace Ice {
 
   window.addEventListener("load", handleLoad);
