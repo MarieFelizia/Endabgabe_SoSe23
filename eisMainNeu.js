@@ -82,23 +82,20 @@ var Ice;
     }
     function handleKeyDown1(event) {
         if (event.key === "1") {
-            1;
             Ice.drawSorte1({ x: 400, y: 250 });
-            console.log("Sorte 1");
+            console.log("Hier ist ein gemischter Eisbecher.");
         }
     }
     function handleKeyDown2(event) {
         if (event.key === "2") {
-            1;
             Ice.drawSorte2({ x: 400, y: 250 });
-            console.log("Sorte 2");
+            console.log("Hier ist ein Kirscheis in der Waffel.");
         }
     }
     function handleKeyDown3(event) {
         if (event.key === "3") {
-            1;
             Ice.drawSorte3({ x: 400, y: 250 });
-            console.log("Sorte 3");
+            console.log("Hier ist ein Bananasplit.");
         }
     }
 })(Ice || (Ice = {}));

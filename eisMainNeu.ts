@@ -100,12 +100,12 @@ namespace Ice {
     }
   }
 
+  
 
   function handleKeyDown1(event: KeyboardEvent): void {
     if (event.key === "1") {
-      1
       drawSorte1({ x: 400, y: 250 });
-      console.log("Sorte 1")
+      console.log("Hier ist ein gemischter Eisbecher.")
     }
 
   }
@@ -113,9 +113,8 @@ namespace Ice {
 
   function handleKeyDown2(event: KeyboardEvent): void {
     if (event.key === "2") {
-      1
       drawSorte2({ x: 400, y: 250 });
-      console.log("Sorte 2")
+      console.log("Hier ist ein Kirscheis in der Waffel.")
     }
 
   }
@@ -123,9 +122,8 @@ namespace Ice {
 
   function handleKeyDown3(event: KeyboardEvent): void {
     if (event.key === "3") {
-      1
       drawSorte3({ x: 400, y: 250 });
-      console.log("Sorte 3")
+      console.log("Hier ist ein Bananasplit.")
     }
 
   }
